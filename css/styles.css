@@ -92,18 +92,24 @@ a:visited.logo-header-link span {
 }
 .nav-menu-list > li > a {
   display: block;
+  position: relative;
   line-height: 75px;
 }
 
-.nav-menu-list a {
-  border-bottom: 4px solid transparent;
-}
 .nav-menu-list a:hover,
 .nav-menu-list a:focus,
 .nav-menu-list .active {
   color: var(--actual-color-text);
-  border-bottom: 4px solid var(--actual-color-text);
+}
+.nav-menu-list .active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
   border-radius: 2px;
+  background-color: var(--actual-color-text);
 }
 
 .nav-contacts-list {

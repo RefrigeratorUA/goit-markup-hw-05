@@ -8,6 +8,7 @@
   --white-index: #ffffff;
   --footer-bg-color: #2f303a;
   --template-color-delete: lightgrey;
+  --kubik-rubik: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -94,6 +95,9 @@ a:visited.logo-header-link span {
   display: block;
   position: relative;
   line-height: 75px;
+  color: inherit;
+
+  transition: color 250ms var(--kubik-rubik) 0ms;
 }
 
 .nav-menu-list a:hover,
@@ -123,18 +127,18 @@ a:visited.logo-header-link span {
 }
 .nav-contacts-list a {
   color: inherit;
+  fill: currentColor;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: inherit;
+
+  transition: color 250ms var(--kubik-rubik) 0ms;
 }
 .nav-contacts-list a:hover,
 .nav-contacts-list a:focus {
-  --color5: var(--actual-color-text);
   color: var(--actual-color-text);
 }
 .icon-nav-svg {
   padding-right: 10px;
-  /* fill: currentColor; */
   line-height: 0;
   vertical-align: middle;
 }
@@ -232,11 +236,21 @@ a:visited.logo-header-link span {
   margin: 0 -15px;
 }
 .section-what-do > ul > li {
+  display: flex;
+  position: relative;
   margin: 0 15px;
 }
-.section-what-do h3 {
+.section-what-do .what-do-div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 27px 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+.section-what-do .what-do-div h3 {
   text-align: center;
-  color: var(--template-color-delete);
+  color: var(--white-index);
 }
 /* Section Team */
 .section-team {
